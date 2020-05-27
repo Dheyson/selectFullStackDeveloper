@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/api', (req, res) => {
 	res.status(200).send({
 		success: 'true',
-		message: 'This is a test',
+		message: 'The router has been called successfully!',
 	});
 });
 

@@ -1,16 +1,31 @@
 const database = require('../config/database');
 
-const createUser = async (req, res) => {
-	const { name, user_name } = req.body;
+exports.createUser = async (req, res) => {
+	const { name, email, password } = req.body;
 
-	const { rows } = database.query("INSERT INTO users (name, user_name, password) VALUES ($1, $2, $3)", [name, user_name, password]);
+	try {
+		const { rows } = await database.query(
+			"INSERT INTO users (name, email, password_user) VALUES ($1, $2, $3)",
+			[name, email, password]);
 
-	res.status(201).send({
-		message: 'User added successfully!',
-		body: {
-			user: { name, user_name, password}
-		},
-	});
+		res.status(201).send({
+			message: 'User added successfully!',
+			body: {
+				user: { name, email, password }
+			},
+		});
+	} catch (error) {
+		console.log('Something went wrong', error);
+	}
 };
 
-module.exports = createUser;
+exports.listUsers = async (req, res) => {
+	try {
+		const response = await database.query(
+			"SELECT * FROM users ORDER BY name ASC"
+		)
+		res.status(200).send(response.rows);
+	} catch (error) {
+		console.log('Something went wrong', error);
+	}
+};

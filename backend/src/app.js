@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 
-const index = require('./router');
 const postsRoute = require('./routes/posts.routes');
 const userRoute = require('./routes/user.routes');
+var cors = require('cors');
 
 app.use(function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -19,10 +19,8 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.json({ type: 'application/vnd.api+json' }));
-
-app.use(index);
+app.use(cors());
 
 app.use('/api/', postsRoute);
 app.use('/api/', userRoute);

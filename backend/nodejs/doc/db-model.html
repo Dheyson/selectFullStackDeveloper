@@ -31,7 +31,7 @@ th {
 
 
 <a name='layout1'/><h4>Default Layout</h4>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='576' height='446' viewBox='0 0 576 446' >
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='528' height='430' viewBox='0 0 528 430' >
   <script type='text/ecmascript'>
   <![CDATA[
   function hghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','highlight');  }  }
@@ -226,6 +226,11 @@ th {
     <path d='M 8.00,0.00 L 8.00, 8.00 z' />
     <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
   </marker>
+  <linearGradient id='tbg_FF0000' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#F3E0E0' /> 
+     <stop offset='60%' stop-color='#DBB9B9' /> 
+     <stop offset='100%' stop-color='#F3E0E0' /> 
+  </linearGradient>
   <linearGradient id='tbg_3986C1' x1='0%' y1='0%' x2='0%' y2='100%' >
      <stop offset='0%' stop-color='#E0EAF3' /> 
      <stop offset='60%' stop-color='#B9CCDB' /> 
@@ -234,8 +239,8 @@ th {
 </defs>
 
 <!-- == Desktop == -->
-<rect x='1' y='1' width='574' height='444' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#777777; stroke-width:0.5;' />
-<rect x='1' y='1' width='574' height='444' rx='8' ry='8' style='fill:url(#layoutBgTr);' />
+<rect x='1' y='1' width='526' height='428' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='526' height='428' rx='8' ry='8' style='fill:url(#layoutBgTr);' />
 
 <!-- == Legend == -->
 <g transform='translate(10,10)'>
@@ -247,76 +252,71 @@ th {
 
 <g transform='translate(0,110)'>
 <!-- == Fk 'posts_fk_posts_users' == -->
-<path id='posts_fk_posts_users'  onmouseover="hghl(['posts_fk_posts_users','public.posts.fk_user_post','public.users.id'])" onmouseout="uhghl(['posts_fk_posts_users','public.posts.fk_user_post','public.users.id'])" transform='translate(8,0)' class='scene' d='M 352,144L 176,144' >
+<path id='posts_fk_posts_users'  onmouseover="hghl(['posts_fk_posts_users','public.posts.user_id','public.users.id'])" onmouseout="uhghl(['posts_fk_posts_users','public.posts.user_id','public.users.id'])" transform='translate(8,0)' class='scene' d='M 352,112L 144,112' >
 	<title>Fk fk_posts_users
-posts ref users ( fk_user_post -&gt; id )</title>
+posts ref users ( user_id -&gt; id )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 352,144L 176,144' ><title>Fk fk_posts_users
-posts ref users ( fk_user_post -&gt; id )</title></path>
-<text x='294' y='139' transform='rotate(0 294,139)' class='relName'>fk_user_post</text>
-<!-- == Table 'posts' == -->
-<rect class='entity' style='stroke:#1E5D8F' x='368' y='136' width='112' height='144' rx='8' ry='8' />
-<path d='M 368 164 L 368 144 Q 368 136 376 136 L 472 136 Q 480 136 480 144 L 480 164 L368 164 ' style='fill:url(#tbg_3986C1);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='368' y='136' width='112' height='144' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#public.posts'><text x='405' y='155' >posts</text><title>Table public.posts
-This is the blog posts table.</title></a>
-  <use id='nn' x='370' y='173' xlink:href='#nn'/><use id='pk' x='370' y='172' xlink:href='#pk'><title>Pk pk_posts_id ( id ) </title></use><a xlink:href='#public.posts_id'><text id='public.posts.id' x='387' y='183'>id</text><title>id
-* serial
-This is the user identification.</title></a>
-<text x='477' y='180' text-anchor='end' class='colType'>#</text>  <use id='nn' x='370' y='189' xlink:href='#nn'/><a xlink:href='#public.posts_title'><text id='public.posts.title' x='387' y='199'>title</text><title>title
-* varchar(30)
-This is the title post information.</title></a>
-<text x='477' y='196' text-anchor='end' class='colType'>t</text>  <use id='nn' x='370' y='205' xlink:href='#nn'/><a xlink:href='#public.posts_content'><text id='public.posts.content' x='387' y='215'>content</text><title>content
-* varchar(300)
-This is the content information.</title></a>
-<text x='477' y='212' text-anchor='end' class='colType'>t</text>  <use id='nn' x='370' y='221' xlink:href='#nn'/><a xlink:href='#public.posts_publish_date'><text id='public.posts.publish_date' x='387' y='231'>publish_date</text><title>publish_date
-* date default current_date
-The publish date information.</title></a>
-<text x='477' y='228' text-anchor='end' class='colType'>d</text>  <use id='nn' x='370' y='237' xlink:href='#nn'/><a xlink:href='#public.posts_time_stamp'><text id='public.posts.time_stamp' x='387' y='247'>time_stamp</text><title>time_stamp
-* timestamp default current_timestamp
-This is the publish time information.</title></a>
-<text x='477' y='244' text-anchor='end' class='colType'>d</text>  <use id='nn' x='370' y='253' xlink:href='#nn'/><a xlink:href='#public.posts_fk_user_post'><text id='public.posts.fk_user_post' x='387' y='263' onmouseover="hghl(['posts_fk_posts_users','public.users.id'])" onmouseout="uhghl(['posts_fk_posts_users','public.users.id'])">fk_user_post</text><title>fk_user_post
-* integer
-This is the relation id</title></a>
-<a xlink:href='#public.posts.fk_user_post'><use id='fk' x='468' y='252' xlink:href='#fk'/><title>References users ( fk_user_post -&gt; id ) </title></a>
-
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 352,112L 144,112' ><title>Fk fk_posts_users
+posts ref users ( user_id -&gt; id )</title></path>
+<text x='323' y='107' transform='rotate(0 323,107)' class='relName'>user_id</text>
 <!-- == Table 'users' == -->
-<rect class='entity' style='stroke:#1E5D8F' x='48' y='72' width='128' height='128' rx='8' ry='8' />
-<path d='M 48 100 L 48 80 Q 48 72 56 72 L 168 72 Q 176 72 176 80 L 176 100 L48 100 ' style='fill:url(#tbg_3986C1);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='48' y='72' width='128' height='128' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#public.users'><text x='94' y='91' >users</text><title>Table public.users
+<rect class='entity' style='stroke:#8F1E1E' x='48' y='40' width='96' height='144' rx='8' ry='8' />
+<path d='M 48 68 L 48 48 Q 48 40 56 40 L 136 40 Q 144 40 144 48 L 144 68 L48 68 ' style='fill:url(#tbg_FF0000);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='48' y='40' width='96' height='144' rx='8' ry='8' style='fill:none;stroke:#E1DADA'/>
+<a xlink:href='#public.users'><text x='78' y='59' >users</text><title>Table public.users
 This is the user table with information for authentication.</title></a>
-  <use id='nn' x='50' y='109' xlink:href='#nn'/><use id='pk' x='50' y='108' xlink:href='#pk'><title>Pk pk_users_id ( id ) </title></use><a xlink:href='#public.users_id'><text id='public.users.id' x='67' y='119' onmouseover="hghl(['posts_fk_posts_users','public.posts.fk_user_post'])" onmouseout="uhghl(['posts_fk_posts_users','public.posts.fk_user_post'])">id</text><title>id
+  <use id='nn' x='50' y='77' xlink:href='#nn'/><use id='pk' x='50' y='76' xlink:href='#pk'><title>Pk pk_users_id ( id ) </title></use><a xlink:href='#public.users_id'><text id='public.users.id' x='67' y='87' onmouseover="hghl(['posts_fk_posts_users','public.posts.user_id'])" onmouseout="uhghl(['posts_fk_posts_users','public.posts.user_id'])">id</text><title>id
 * serial</title></a>
-<a xlink:href='#public.users.id'><use id='ref' x='164' y='108' xlink:href='#ref'/><title>Referred by posts ( fk_user_post -&gt; id ) </title></a>
-  <use id='nn' x='50' y='125' xlink:href='#nn'/><a xlink:href='#public.users_name'><text id='public.users.name' x='67' y='135'>name</text><title>name
+<a xlink:href='#public.users.id'><use id='ref' x='132' y='76' xlink:href='#ref'/><title>Referred by posts ( user_id -&gt; id ) </title></a>
+  <use id='nn' x='50' y='93' xlink:href='#nn'/><a xlink:href='#public.users_username'><text id='public.users.username' x='67' y='103'>username</text><title>username
 * varchar(100)
 This is the name info.</title></a>
-<text x='173' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='141' xlink:href='#nn'/><a xlink:href='#public.users_email'><text id='public.users.email' x='67' y='151'>email</text><title>email
+<text x='141' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='109' xlink:href='#nn'/><a xlink:href='#public.users_email'><text id='public.users.email' x='67' y='119'>email</text><title>email
 * varchar(30)
 This is the email info.</title></a>
-<text x='173' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='157' xlink:href='#nn'/><a xlink:href='#public.users_password_user'><text id='public.users.password_user' x='67' y='167'>password_user</text><title>password_user
+<text x='141' y='116' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='125' xlink:href='#nn'/><a xlink:href='#public.users_password'><text id='public.users.password' x='67' y='135'>password</text><title>password
 * varchar(30)
 This is the password info.</title></a>
-<text x='173' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='173' xlink:href='#nn'/><a xlink:href='#public.users_time_stamp'><text id='public.users.time_stamp' x='67' y='183'>time_stamp</text><title>time_stamp
+<text x='141' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='141' xlink:href='#nn'/><a xlink:href='#public.users_created_at'><text id='public.users.created_at' x='67' y='151'>created_at</text><title>created_at
 * timestamp default current_timestamp
-This is the time stamp info.</title></a>
-<text x='173' y='180' text-anchor='end' class='colType'>d</text>
-<!-- == Callout == -->
-<rect class='callout' x='48' y='32' width='336' height='33' rx='16' ry='16'  />
-<text x='72' y='32' class='callout'>
-    <tspan x='52' dx='8' dy='18'>This is the user table with information for authentication&#46;</tspan>
-</text>
-<!-- == Callout == -->
-<rect class='callout' x='368' y='96' width='176' height='33' rx='16' ry='16'  />
-<text x='392' y='96' class='callout'>
-    <tspan x='372' dx='8' dy='18'>This is the blog posts table&#46;</tspan>
-</text>
+This is the data created.</title></a>
+<text x='141' y='148' text-anchor='end' class='colType'>d</text>  <use id='nn' x='50' y='157' xlink:href='#nn'/><a xlink:href='#public.users_updated_at'><text id='public.users.updated_at' x='67' y='167'>updated_at</text><title>updated_at
+* timestamp default current_timestamp
+This is the data updated.</title></a>
+<text x='141' y='164' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'posts' == -->
+<rect class='entity' style='stroke:#1E5D8F' x='368' y='104' width='112' height='160' rx='8' ry='8' />
+<path d='M 368 132 L 368 112 Q 368 104 376 104 L 472 104 Q 480 104 480 112 L 480 132 L368 132 ' style='fill:url(#tbg_3986C1);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='368' y='104' width='112' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#public.posts'><text x='405' y='123' >posts</text><title>Table public.posts
+This is the blog posts table.</title></a>
+  <use id='nn' x='370' y='141' xlink:href='#nn'/><use id='pk' x='370' y='140' xlink:href='#pk'><title>Pk pk_posts_id ( id ) </title></use><a xlink:href='#public.posts_id'><text id='public.posts.id' x='387' y='151'>id</text><title>id
+* serial
+This is the user identification.</title></a>
+<text x='477' y='148' text-anchor='end' class='colType'>#</text>  <use id='nn' x='370' y='157' xlink:href='#nn'/><a xlink:href='#public.posts_post_title'><text id='public.posts.post_title' x='387' y='167'>post_title</text><title>post_title
+* varchar(30)
+This is the title post information.</title></a>
+<text x='477' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='370' y='173' xlink:href='#nn'/><a xlink:href='#public.posts_post_content'><text id='public.posts.post_content' x='387' y='183'>post_content</text><title>post_content
+* varchar(300)
+This is the content information.</title></a>
+<text x='477' y='180' text-anchor='end' class='colType'>t</text>  <use id='nn' x='370' y='189' xlink:href='#nn'/><a xlink:href='#public.posts_publish_date'><text id='public.posts.publish_date' x='387' y='199'>publish_date</text><title>publish_date
+* date default current_date
+The publish date information.</title></a>
+<text x='477' y='196' text-anchor='end' class='colType'>d</text>  <use id='nn' x='370' y='205' xlink:href='#nn'/><a xlink:href='#public.posts_created_at'><text id='public.posts.created_at' x='387' y='215'>created_at</text><title>created_at
+* timestamp default current_timestamp
+This is the publish time information.</title></a>
+<text x='477' y='212' text-anchor='end' class='colType'>d</text>  <use id='nn' x='370' y='221' xlink:href='#nn'/><a xlink:href='#public.posts_updated_at'><text id='public.posts.updated_at' x='387' y='231'>updated_at</text><title>updated_at
+* timestamp default current_timestamp</title></a>
+<text x='477' y='228' text-anchor='end' class='colType'>d</text>  <use id='nn' x='370' y='237' xlink:href='#nn'/><a xlink:href='#public.posts_user_id'><text id='public.posts.user_id' x='387' y='247' onmouseover="hghl(['posts_fk_posts_users','public.users.id'])" onmouseout="uhghl(['posts_fk_posts_users','public.users.id'])">user_id</text><title>user_id
+* integer
+This is the relation id</title></a>
+<a xlink:href='#public.posts.user_id'><use id='fk' x='468' y='236' xlink:href='#fk'/><title>References users ( user_id -&gt; id ) </title></a>
+
 </g></svg></div>
 <div class='container'>
 
 <br><br>
-<div class='card'><div class='card-body'><a name='public.posts' onclick='window.scrollTo(168, 144);return false;' style='cursor:pointer;'><h5 class='card-title'>Table posts</h5></a>
+<div class='card'><div class='card-body'><a name='public.posts' onclick='window.scrollTo(168, 112);return false;' style='cursor:pointer;'><h5 class='card-title'>Table posts</h5></a>
 <p class="text-muted">This is the blog posts table&#46;</p>
 <table class='table table-sm table-bordered small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
@@ -331,13 +331,13 @@ This is the time stamp info.</title></a>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.posts_title'>title</a></td>
+		<td><a name='public.posts_post_title'>post&#95;title</a></td>
 		<td> varchar&#40;30&#41;  </td>
 		<td> This is the title post information&#46; </td>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.posts_content'>content</a></td>
+		<td><a name='public.posts_post_content'>post&#95;content</a></td>
 		<td> varchar&#40;300&#41;  </td>
 		<td> This is the content information&#46; </td>
 	</tr>
@@ -349,13 +349,19 @@ This is the time stamp info.</title></a>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.posts_time_stamp'>time&#95;stamp</a></td>
+		<td><a name='public.posts_created_at'>created&#95;at</a></td>
 		<td> timestamp  DEFAULT current_timestamp </td>
 		<td> This is the publish time information&#46; </td>
 	</tr>
 	<tr>
+		<td>*</td>
+		<td><a name='public.posts_updated_at'>updated&#95;at</a></td>
+		<td> timestamp  DEFAULT current_timestamp </td>
+		<td>  </td>
+	</tr>
+	<tr>
 		<td>*<svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='public.posts_fk_user_post'>fk&#95;user&#95;post</a></td>
+		<td><a name='public.posts_user_id'>user&#95;id</a></td>
 		<td> integer  </td>
 		<td> This is the relation id </td>
 	</tr>
@@ -367,14 +373,14 @@ This is the time stamp info.</title></a>
 <tr><th colspan='4'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_posts_users</td>
-		<td > ( fk&#95;user&#95;post ) ref <a href='#public&#46;users'>users</a> (id) </td>
+		<td > ( user&#95;id ) ref <a href='#public&#46;users'>users</a> (id) </td>
 		<td> This is the user post&#46; </td>
 	</tr>
 </tbody>
 </table></div></div>
 
 <br><br>
-<div class='card'><div class='card-body'><a name='public.users' onclick='window.scrollTo(60, 80);return false;' style='cursor:pointer;'><h5 class='card-title'>Table users</h5></a>
+<div class='card'><div class='card-body'><a name='public.users' onclick='window.scrollTo(60, 48);return false;' style='cursor:pointer;'><h5 class='card-title'>Table users</h5></a>
 <p class="text-muted">This is the user table with information for authentication&#46;</p>
 <table class='table table-sm table-bordered small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
@@ -389,7 +395,7 @@ This is the time stamp info.</title></a>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.users_name'>name</a></td>
+		<td><a name='public.users_username'>username</a></td>
 		<td> varchar&#40;100&#41;  </td>
 		<td> This is the name info&#46; </td>
 	</tr>
@@ -401,15 +407,21 @@ This is the time stamp info.</title></a>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.users_password_user'>password&#95;user</a></td>
+		<td><a name='public.users_password'>password</a></td>
 		<td> varchar&#40;30&#41;  </td>
 		<td> This is the password info&#46; </td>
 	</tr>
 	<tr>
 		<td>*</td>
-		<td><a name='public.users_time_stamp'>time&#95;stamp</a></td>
+		<td><a name='public.users_created_at'>created&#95;at</a></td>
 		<td> timestamp  DEFAULT current_timestamp </td>
-		<td> This is the time stamp info&#46; </td>
+		<td> This is the data created&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='public.users_updated_at'>updated&#95;at</a></td>
+		<td> timestamp  DEFAULT current_timestamp </td>
+		<td> This is the data updated&#46; </td>
 	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
 	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;users&#95;id</td>

@@ -1,4 +1,5 @@
 const database = require('../config/database');
+const passport = require('passport');
 
 exports.createPost = async (req, res) => {
 	const { title, content } = req.body;

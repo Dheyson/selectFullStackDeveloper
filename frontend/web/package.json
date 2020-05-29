@@ -1,0 +1,64 @@
+{
+  "name": "web",
+	"version": "0.1.0",
+	"description": "This is the web version from Softmakers CMS",
+	"private": true,
+	"author": "Dheyson Alves <dheyson10@gmail.com> (https://dheysonalves-tech.surge.sh/)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Dheyson/selectFullStackDeveloper.git"
+	},
+	"keywords": [
+		"jsx",
+		"reactjs",
+		"eslint",
+		"babel",
+		"react-router"
+	],
+	"homepage": "https://github.com/Dheyson/selectFullStackDeveloper/blob/master/README.md",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "reactstrap": "^8.4.1",
+    "source-map-explorer": "^2.4.2",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "react-scripts start",
+		"build": "react-scripts build",
+		"prepush": "yarn run lint",
+    "lint": "./node_modules/.bin/eslint src/*.jsx",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 2 versions"
+    ]
+  }
+}

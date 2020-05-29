@@ -23,3 +23,16 @@ export const Subtitle = styled.p`
 	line-height: 20px;
 	color: #333333;
 `;
+
+export const FormWrapper = styled.div`
+	padding: 40px;
+`;
+
+export const FormHeader = styled.h2`
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 27px;
+	color: #333333;
+`;

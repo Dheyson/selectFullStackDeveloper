@@ -10,17 +10,18 @@ const styles = {
 		margin: 0,
 		padding: 0,
 		height: '100vh',
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'space-between'
 	}
 }
 
 const Layout = ({ children }) => {
 	return (
 		<Container fluid style={styles.containertyle}>
+			<Row>
+				<Col>
 					{children}
-				<Footer/>
+					<Footer />
+				</Col>
+			</Row>
 		</Container>
 	);
 }

@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
+var cors = require('cors');
 
 const postsRoute = require('./routes/posts.routes');
 const userRoute = require('./routes/user.routes');
-var cors = require('cors');
 
 app.use(function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');

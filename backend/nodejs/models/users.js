@@ -5,15 +5,18 @@ module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     username: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    password: DataTypes.VIRTUAL,
+    password_hash: DataTypes.STRING,
   }, {});
 
 
   Users.beforeCreate(async (user, options) => {
-    if (user.changed('password')) {
-      const hashedPassword = await bcypt.hash(user.password, bcrypt.genSaltSync(10), null);
-      user.password = hashedPassword;
-    };
+    if (user.password) {
+      const hashedPassword = await bcypt.hash(user.password, 10);
+      return user.password_hash = hashedPassword;
+    } else {
+      throw new Error();
+    }
   });
 
   Users.prototype.comparePassword = function (paswd, cb) {
@@ -28,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   // Allows to log in with a name(username) or email
-  Users.findByLogin = async login => {
+  Users.findByLogin = async (login) => {
     let user = await Users.findOne({
       where: { username: login },
     });

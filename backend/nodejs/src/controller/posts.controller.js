@@ -1,18 +1,19 @@
-const database = require('../config/database');
-const passport = require('passport');
+const { Posts } = require('../../models');
 
 exports.createPost = async (req, res) => {
-	const { title, content } = req.body;
+	const { post_title, post_content, publish_date } = req.body;
 
 	try {
-		const { rows } = await database.query(
-			"INSERT INTO posts (title, content) VALUES ($1, $2)",
-			[title, content]);
+		let response = await Posts.create({
+			post_title,
+			post_content,
+			publish_date
+		});
 
 		res.status(201).send({
 			message: 'Post added successfully!',
 			body: {
-				post: { title, content }
+				post: response
 			},
 		});
 
@@ -22,49 +23,45 @@ exports.createPost = async (req, res) => {
 };
 
 exports.listPosts = async (req, res) => {
-	try {
-		const response = await database.query(
-			"SELECT * FROM posts ORDER BY title ASC"
-		)
-		res.status(200).send(response.rows);
-	} catch (error) {
-		console.log('Something went wrong', error);
-	}
+	const posts = await Posts.findAll();
+	return res.status(200).send(posts);
 }
 
 exports.findPostsById = async (req, res) => {
-	const postId = parseInt(req.params.id);
-
-	try {
-		const response = await database.query(
-			"SELECT * FROM posts WHERE id = $1", [postId]
-		)
-		res.status(200).send(response.rows);
-	} catch (error) {
-		console.log('Something went wrong', error);
-	}
+	const post = await Posts.findByPk(
+		req.params.id,
+	);
+	res.status(200).send({
+		message: 'User was found!',
+		body: post
+	});
 };
 
 exports.updatePostById = async (req, res) => {
-	const postId = parseInt(req.params.id);
-	const { title, content } = req.body;
 	try {
-		const response = await database.query(
-			"UPDATE FROM posts SET title = $1, content = $2 WHERE id = $3", [title, content, postId]
-		)
-		res.status(200).send({ message: 'successfully' });
+		const { postId } = req.params;
+		const [updated] = await Posts.update(req.body, {
+			where: { id: postId }
+		});
+		if (updated) {
+			const updatedPost = await Posts.findOne({ where: { id: postId } });
+			return res.status(200).json({ post: updatedPost });
+		}
+		throw new Error('Post not found');
 	} catch (error) {
-		console.log('Something went wrong', error);
+		return res.status(500).send(error.message);
 	}
 };
 
 exports.deletePostById = async (req, res) => {
-	const postId = parseInt(req.params.id);
+	const { id } = req.body;
+
 	try {
-		const response = await database.query(
-			"UPDATE posts SET deleted_at = now() WHERE id = $1", [postId]
-		)
-		res.status(200).send({ message: 'Post deleted successfully!', postId });
+		const response = await Posts.destroy({
+			where: { id: id },
+		});
+
+		return res.status(200).send(true);
 	} catch (error) {
 		console.log('Something went wrong', error);
 	}

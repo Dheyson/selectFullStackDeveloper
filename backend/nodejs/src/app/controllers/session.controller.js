@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
 const authConf = require('../../config/auth.token');
-const { User } = require('../../database/models');
+const { users } = require('../../database/models');
 
-export default async function store(req, res) {
+export default async (req, res) => {
 	const { email, password } = req.body;
 
-	const user = await User.findOne({ where: { email } });
+	const user = await users.findOne({ where: { email } });
 	if (!user) {
 		return res.status(401).json({ error: 'User not found' });
 	}

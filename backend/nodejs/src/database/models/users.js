@@ -2,7 +2,7 @@ const bcypt = require('bcrypt');
 
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Users = sequelize.define('Users', {
+  const Users = sequelize.define('users', {
     username: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.VIRTUAL,
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Users.associate = function (models) {
     // Options onDelete CASCADE, allows to delete all posts related with the user
-    Users.hasMany(models.Posts, { onDelete: 'CASCADE' });
+    Users.hasMany(models.posts, { onDelete: 'CASCADE' });
   };
 
   // Allows to log in with a name(username) or email

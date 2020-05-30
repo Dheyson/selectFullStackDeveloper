@@ -1,5 +1,5 @@
 const Yup = require('yup');
-const { Users } =  require('../../models');
+const { users } =  require('../../database/models');
 
 module.exports.createUser = async (req, res) => {
 	const schema = Yup.object().shape({
@@ -24,7 +24,7 @@ module.exports.createUser = async (req, res) => {
 			return res.status(400).json({ error: 'User already exists.' });
 		}
 
-		let response = await Users.create({
+		let response = await users.create({
 			username,
 			email,
 			password,
@@ -44,12 +44,12 @@ module.exports.createUser = async (req, res) => {
 };
 
 module.exports.getUsers = async (req, res) => {
-	const users = await Users.findAll();
-	return res.status(200).send(users);
+	const Users = await users.findAll();
+	return res.status(200).send(Users);
 }
 
 module.exports.getUser = async (req, res) => {
-	const user = await Users.findByPk(
+	const user = await users.findByPk(
 		req.params.id,
 	);
 	res.status(200).send({
@@ -78,21 +78,21 @@ module.exports.update = async (req, res) => {
 	}
 
 	const { email, oldPassword } = req.body;
-	const user = await Users.findByPk(req.userId);
+	const user = await users.findByPk(req.userId);
 
 	if (email !== user.email) {
-		const userExists = await Users.findOne({
+		const userExists = await users.findOne({
 			where: { email },
 		});
 		if (userExists) {
 			return res.status(400).json({ error: 'User already exists.' });
 		}
 	}
-	if (oldPassword && !(await Users.comparePassword(oldPassword))) {
+	if (oldPassword && !(await users.comparePassword(oldPassword))) {
 		return res.status(401).json({ error: 'Password does not match.' });
 	}
 
-	const { id, name } = await Users.update(req.body);
+	const { id, name } = await users.update(req.body);
 
 	return res.json({ id, name, email });
 }

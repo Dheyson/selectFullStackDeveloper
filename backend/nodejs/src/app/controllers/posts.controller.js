@@ -1,13 +1,15 @@
-const { Posts } = require('../../models');
+const { posts } = require('../../database/models');
 
 module.exports.createPost = async (req, res) => {
-	const { post_title, post_content, publish_date } = req.body;
+	const { post_title, post_content, publish_date, userId } = req.body;
+	// pega o ID do user da sesseon - User logado
 
 	try {
-		let response = await Posts.create({
+		let response = await posts.create({
 			post_title,
 			post_content,
-			publish_date
+			publish_date,
+			userId
 		});
 
 		res.status(201).send({
@@ -23,12 +25,12 @@ module.exports.createPost = async (req, res) => {
 };
 
 module.exports.listPosts = async (req, res) => {
-	const posts = await Posts.findAll();
-	return res.status(200).send(posts);
+	const Posts = await posts.findAll();
+	return res.status(200).send(Posts);
 }
 
 module.exports.findPostsById = async (req, res) => {
-	const post = await Posts.findByPk(
+	const post = await posts.findByPk(
 		req.params.id,
 	);
 	res.status(200).send({
@@ -40,11 +42,11 @@ module.exports.findPostsById = async (req, res) => {
 module.exports.updatePostById = async (req, res) => {
 	try {
 		const { postId } = req.params;
-		const [updated] = await Posts.update(req.body, {
+		const [updated] = await posts.update(req.body, {
 			where: { id: postId }
 		});
 		if (updated) {
-			const updatedPost = await Posts.findOne({ where: { id: postId } });
+			const updatedPost = await posts.findOne({ where: { id: postId } });
 			return res.status(200).json({ post: updatedPost });
 		}
 		throw new Error('Post not found');
@@ -54,11 +56,13 @@ module.exports.updatePostById = async (req, res) => {
 };
 
 module.exports.deletePostById = async (req, res) => {
-	const { id } = req.body;
+	const post = await posts.findByPk(
+		req.params.id,
+	);
 
 	try {
-		const response = await Posts.destroy({
-			where: { id: id },
+		const response = await posts.destroy({
+			where: { id: post.id },
 		});
 
 		return res.status(200).send(true);
@@ -66,4 +70,3 @@ module.exports.deletePostById = async (req, res) => {
 		console.log('Something went wrong', error);
 	}
 };
-

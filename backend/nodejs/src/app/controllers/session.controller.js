@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-const authConf = require('../config/auth');
-const { User } = require('../../models');
+const authConf = require('../../config/auth.token');
+const { User } = require('../../database/models');
 
 export default async function store(req, res) {
 	const { email, password } = req.body;

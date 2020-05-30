@@ -1,6 +1,6 @@
 const { Posts } = require('../../models');
 
-exports.createPost = async (req, res) => {
+module.exports.createPost = async (req, res) => {
 	const { post_title, post_content, publish_date } = req.body;
 
 	try {
@@ -22,12 +22,12 @@ exports.createPost = async (req, res) => {
 	}
 };
 
-exports.listPosts = async (req, res) => {
+module.exports.listPosts = async (req, res) => {
 	const posts = await Posts.findAll();
 	return res.status(200).send(posts);
 }
 
-exports.findPostsById = async (req, res) => {
+module.exports.findPostsById = async (req, res) => {
 	const post = await Posts.findByPk(
 		req.params.id,
 	);
@@ -37,7 +37,7 @@ exports.findPostsById = async (req, res) => {
 	});
 };
 
-exports.updatePostById = async (req, res) => {
+module.exports.updatePostById = async (req, res) => {
 	try {
 		const { postId } = req.params;
 		const [updated] = await Posts.update(req.body, {
@@ -53,7 +53,7 @@ exports.updatePostById = async (req, res) => {
 	}
 };
 
-exports.deletePostById = async (req, res) => {
+module.exports.deletePostById = async (req, res) => {
 	const { id } = req.body;
 
 	try {

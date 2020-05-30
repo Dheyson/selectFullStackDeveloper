@@ -19,9 +19,9 @@ const Layout = ({ children }) => {
 			<Row>
 				<Col>
 					{children}
-					<Footer />
 				</Col>
 			</Row>
+			<Footer />
 		</Container>
 	);
 }

@@ -6,16 +6,20 @@ import Col from 'react-bootstrap/Col';
 
 import FormContainer from '../../components/Form/FormContainer';
 
+import SpanLink from '../../components/SpanLink';
+
 const Lead = () => {
 	return (
 		<Row>
 			<S.ColBackground xs={12} sm={12} md={7}>
-				<S.Header>
-					CMS <br />Softmakers
+				<S.InfoWrapper>
+					<S.Header>
+						CMS <br />Softmakers
 					</S.Header>
-				<S.Subtitle>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cupiditate possimus perferendis? Libero id harum molestiae dolorem voluptatem reiciendis, at magni voluptatum debitis hic corporis maxime! Laudantium ut repudiandae distinctio!
+					<S.Subtitle>
+						A content management system (CMS) is a software application that can be used to manage the creation and modification of digital content. CMSs are typically used for enterprise content management (ECM) and web content management (WCM).
 					</S.Subtitle>
+				</S.InfoWrapper>
 			</S.ColBackground>
 
 			<Col xs={12} sm={12} md={5}>
@@ -25,6 +29,7 @@ const Lead = () => {
 						an account:
 					</S.FormHeader>
 					<FormContainer />
+					<SpanLink text="Already have an account?" link="Github" href="https://github.com/Dheyson" />
 				</S.FormWrapper>
 			</Col>
 		</Row>

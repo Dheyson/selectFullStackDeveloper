@@ -4,7 +4,12 @@ import Col from 'react-bootstrap/Col';
 
 export const ColBackground = styled(Col)`
 	background-color: #F2BB05;
-	padding: 40px;
+`;
+
+export const InfoWrapper = styled.div`
+	@media (min-width: 1440px) {
+    padding: 40px;
+  }
 `;
 
 export const Header = styled.h1`
@@ -14,6 +19,12 @@ export const Header = styled.h1`
 	font-size: 36px;
 	line-height: 54px;
 	color: #333333;
+
+	@media (min-width: 1440px) {
+    font-weight: 600;
+		font-size: 72px;
+		line-height: 108px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -23,13 +34,20 @@ export const Subtitle = styled.p`
 	font-size: 12px;
 	line-height: 20px;
 	color: #333333;
+
+@media (min-width: 1440px) {
+    font-size: 16px;
+		line-height: 24px;
+  }
 `;
 
 export const FormWrapper = styled.div`
 	padding: 40px 16px 40px 16px;
 
 	@media (min-width: 1440px) {
-    padding: 140px 125px 20px 125px;
+    display: flex;
+		flex-direction: column;
+		align-items: center;
   }
 `;
 
@@ -41,4 +59,10 @@ export const FormHeader = styled.h2`
 	line-height: 27px;
 	color: #333333;
 	margin-bottom: 24px;
+
+	@media (min-width: 1440px) {
+		font-size: 36px;
+		line-height: 54px;
+  }
 `;
+

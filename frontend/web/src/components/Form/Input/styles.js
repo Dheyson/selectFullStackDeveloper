@@ -19,5 +19,5 @@ export const inputStyle = styled.input`
 	border: 2px solid #333333;
 	border-radius: 6px;
 	width: 100%;
-	padding: 10px;
+	padding: 15px;
 	`;

@@ -24,10 +24,6 @@ const Lead = () => {
 
 			<Col xs={12} sm={12} md={5}>
 				<S.FormWrapper>
-					<S.FormHeader>
-						Create
-						an account:
-					</S.FormHeader>
 					<FormContainer />
 					<SpanLink text="Already have an account?" link="Github" href="https://github.com/Dheyson" />
 				</S.FormWrapper>

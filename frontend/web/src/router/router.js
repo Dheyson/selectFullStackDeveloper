@@ -8,10 +8,10 @@ import FrontPage from '../pages/Front';
 export default function App() {
 	return (
 			<Switch>
-				<Route path="/">
+				<Route path="/as">
 					<LeadPage />
 				</Route>
-				<Route path="/front">
+				<Route path="/">
 					<FrontPage />
 				</Route>
 				<Route path="/a">

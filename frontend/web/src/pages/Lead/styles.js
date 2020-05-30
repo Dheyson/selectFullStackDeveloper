@@ -1,9 +1,25 @@
 import styled from 'styled-components';
-import Image from '../../assets/images/bg-intro-mobile.png';
 import Col from 'react-bootstrap/Col';
+import imgDesktop from '../../assets/images/bg-intro-desktop.png';
+import imgMobile from '../../assets/images/bg-intro-mobile.png';
 
 export const ColBackground = styled(Col)`
-	background-color: #F2BB05;
+	background-image: url(${imgMobile});
+	position: relative;
+
+	@media (min-width: 1440px) {
+    background-image: url(${imgDesktop});
+	}
+
+	&:before {
+	background-color : #F2BB05;
+	z-index: -1;
+	content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+	}
 `;
 
 export const InfoWrapper = styled.div`

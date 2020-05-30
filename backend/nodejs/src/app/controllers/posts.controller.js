@@ -41,12 +41,13 @@ module.exports.findPostsById = async (req, res) => {
 
 module.exports.updatePostById = async (req, res) => {
 	try {
-		const { postId } = req.params;
+		const { id } = req.params;
+
 		const [updated] = await posts.update(req.body, {
-			where: { id: postId }
+			where: { id: id }
 		});
 		if (updated) {
-			const updatedPost = await posts.findOne({ where: { id: postId } });
+			const updatedPost = await posts.findOne({ where: { id: id } });
 			return res.status(200).json({ post: updatedPost });
 		}
 		throw new Error('Post not found');

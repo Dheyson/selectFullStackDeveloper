@@ -3,7 +3,7 @@ const { users } =  require('../../database/models');
 
 module.exports.createUser = async (req, res) => {
 	const schema = Yup.object().shape({
-		name: Yup.string().required(),
+		username: Yup.string().required(),
 		email: Yup.string()
 			.email()
 			.required(),
@@ -17,7 +17,7 @@ module.exports.createUser = async (req, res) => {
 	}
 
 	const { username, email, password } = req.body;
-	const userExists = await User.findOne({ where: { email: email } });
+	const userExists = await users.findOne({ where: { email: email } });
 
 	try {
 		if (userExists) {
@@ -58,9 +58,10 @@ module.exports.getUser = async (req, res) => {
 	});
 }
 
-module.exports.update = async (req, res) => {
+module.exports.update = async ( req, res ) => {
+
 	const schema = Yup.object().shape({
-		name: Yup.string(),
+		username: Yup.string(),
 		email: Yup.string().email(),
 		oldPassword: Yup.string().min(6),
 		password: Yup.string()
@@ -78,22 +79,25 @@ module.exports.update = async (req, res) => {
 	}
 
 	const { email, oldPassword } = req.body;
-	const user = await users.findByPk(req.userId);
+	const user = await users.findByPk( req.params.id );
 
-	if (email !== user.email) {
+	if ( email == user.email ) {
 		const userExists = await users.findOne({
-			where: { email },
+			where: { email,  },
 		});
-		if (userExists) {
-			return res.status(400).json({ error: 'User already exists.' });
+		if ( userExists ) {
+			return res.status( 400 ).json({ error: 'User already exists.' });
 		}
 	}
-	if (oldPassword && !(await users.comparePassword(oldPassword))) {
-		return res.status(401).json({ error: 'Password does not match.' });
+
+	if ( oldPassword && !( await users.comparePassword( oldPassword ))) {
+		return res.status( 401 ).json({ error: 'Password does not match.' });
 	}
 
-	const { id, name } = await users.update(req.body);
+	const { id, username, password } = await users.update( req.body, {
+		where: { id: user.id }
+	});
 
-	return res.json({ id, name, email });
+	return res.json({ id, username, email, password });
 }
 

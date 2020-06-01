@@ -30,7 +30,7 @@ export const ItemsContainer = styled.div`
 	flex: 2.5;
 `;
 
-export const PostList = styled.aside`
+export const PostListContainer = styled.aside`
 	display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -7,15 +7,17 @@ export const StyledButton = styled(Button)`
 	border: 0px solid ${props => props.theme.main};
 
 	&:hover {
-
+	background: #124E81;
 	}
 `;
 
 StyledButton.defaultProps = {
 	theme: {
-		main: '#124E78'
+		main: '#124E78',
 	}
 }
+
+
 
 export const StyledSpan = styled.span`
 	font-family: Poppins;

@@ -5,6 +5,7 @@ import * as S from './styles';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Footer';
 import PostItem from '../../components/PostItem';
+import PostList from '../../components/PostItem/PostList';
 
 const Home = () => {
 	return (
@@ -15,9 +16,9 @@ const Home = () => {
 					<PostItem />
 					<PostItem />
 				</S.ItemsContainer>
-				<S.PostList>
-					<PostItem />
-				</S.PostList>
+				<S.PostListContainer>
+					<PostList />
+				</S.PostListContainer>
 			</S.Main>
 			<Footer />
 		</S.Container>

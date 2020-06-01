@@ -7,16 +7,19 @@ import FrontPage from '../pages/Front';
 
 export default function App() {
 	return (
-			<Switch>
-				<Route path="/as">
-					<LeadPage />
-				</Route>
-				<Route path="/">
-					<FrontPage />
-				</Route>
-				<Route path="/a">
-					<HomePage />
-				</Route>
-			</Switch>
+		<Switch>
+			<Route exact path="/">
+				<LeadPage />
+			</Route>
+			<Route path="/login">
+				<FrontPage />
+			</Route>
+			<Route path="/signup">
+				<FrontPage />
+			</Route>
+			<Route path="/home">
+				<HomePage />
+			</Route>
+		</Switch>
 	);
 }

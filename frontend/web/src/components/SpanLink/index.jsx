@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 import * as S from './styles';
+import {
+	Link,
+} from "react-router-dom";
 
-const index = ({text, link, href}) => {
+const index = ({text, linkLabel, to, onClick, hidden}) => {
+
 	return (
-		<S.SpanStyled>
-			{text} <S.LinkStyled href={href} target="_blank">
-				{link}
-			</S.LinkStyled>
+		<S.SpanStyled hidden={hidden}>
+			{text}
+			<Link onClick={onClick} to={to}>
+				{linkLabel}
+			</Link>
 		</S.SpanStyled>
 	);
 }

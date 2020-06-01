@@ -6,7 +6,6 @@ import imgMobile from '../../assets/images/bg-intro-mobile.png';
 export const ColBackground = styled(Col)`
 	background-image: url(${imgMobile});
 	position: relative;
-
 	@media (min-width: 1440px) {
     background-image: url(${imgDesktop});
 	}
@@ -23,9 +22,7 @@ export const ColBackground = styled(Col)`
 `;
 
 export const InfoWrapper = styled.div`
-	@media (min-width: 1440px) {
-    padding: 40px;
-  }
+	padding: 40px;
 `;
 
 export const Header = styled.h1`

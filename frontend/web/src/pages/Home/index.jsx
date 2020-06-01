@@ -1,10 +1,15 @@
 import React from 'react';
 
+import * as S from './styles';
+
+import Header from '../../components/Layout/Header';
+
+
 const Home = () => {
 	return (
-		<div>
-			<h1>This is a test</h1>
-		</div>
+		<S.Container>
+			<Header />
+		</S.Container>
 	);
 }
 

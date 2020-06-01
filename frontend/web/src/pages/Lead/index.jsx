@@ -4,6 +4,10 @@ import * as S from './styles';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import {
+	Link,
+} from "react-router-dom";
+
 import FormContainer from '../../components/Form/FormContainer';
 
 import SpanLink from '../../components/SpanLink';
@@ -24,8 +28,7 @@ const Lead = () => {
 
 			<Col xs={12} sm={12} md={5}>
 				<S.FormWrapper>
-					<FormContainer />
-					<SpanLink text="Already have an account?" link="Github" href="https://github.com/Dheyson" />
+					<FormContainer linkTo="/login"/>
 				</S.FormWrapper>
 			</Col>
 		</Row>

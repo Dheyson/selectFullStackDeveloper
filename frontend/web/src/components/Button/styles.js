@@ -5,6 +5,10 @@ export const StyledButton = styled(Button)`
 	background: ${props => props.theme.main};
 	border-radius: 6px;
 	border: 0px solid ${props => props.theme.main};
+
+	&:hover {
+
+	}
 `;
 
 StyledButton.defaultProps = {

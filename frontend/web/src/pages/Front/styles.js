@@ -9,7 +9,7 @@ export const Container = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-
+	min-height: 100vh;
 	@media (min-width: 1440px) {
     background-image: url(${imgDesktop});
   }

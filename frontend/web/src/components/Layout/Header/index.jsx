@@ -10,9 +10,11 @@ const Header = () => {
 			<S.Wrapper>
 				<S.ImageLogotype src={Image} width="200px"/>
 				<S.Icons>
-					<RiArticleLine color="#D74E09" size={24} />
-					<RiLogoutBoxLine size={24} />
-					<span>OkOk</span>
+					<S.Icons>
+					<RiArticleLine color="#D74E09" size={32} />
+					<RiLogoutBoxLine size={32} />
+					<S.UserSpan>User</S.UserSpan>
+					</S.Icons>
 				</S.Icons>
 			</S.Wrapper>
 		</S.HeadContainer>

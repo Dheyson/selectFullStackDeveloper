@@ -2,7 +2,7 @@ const colors = {
 	white: '#FFFFFF',
 	black: '#363636',
 	gray: '#939393',
-	lightGray: '#C9C9C9',
+	lightGray: '#F9F9F9',
 	opacityBlack: 'rgba(54, 54, 54, 0.8)',
 	btnBlue: '#124E78',
 	easyYellow: '#F0F0C9',

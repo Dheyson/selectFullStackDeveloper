@@ -14,3 +14,13 @@ export const FormHeader = styled.h2`
 		line-height: 54px;
   }
 `;
+
+export const errorField = styled.p`
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 21px;
+	text-align: right;
+	color: #E54039;
+`;

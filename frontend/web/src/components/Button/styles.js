@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button'
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled.button`
 	background: ${props => props.theme.main};
 	border-radius: 6px;
 	border: 0px solid ${props => props.theme.main};
+	width: 100%;
 
 	&:hover {
-	background: #124E81;
+	background: #124c79;
 	}
 `;
 
@@ -16,8 +17,6 @@ StyledButton.defaultProps = {
 		main: '#124E78',
 	}
 }
-
-
 
 export const StyledSpan = styled.span`
 	font-family: Poppins;

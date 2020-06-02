@@ -20,14 +20,8 @@ const Front = () => {
 				<S.Image src={require('../../assets/images/logo-web.png')} alt="logotype page" srcSet="" />
 			</S.Wrapper>
 			<S.FormBackground>
-				{
-					inProp &&
 					<FormContainer linkTo={handleTo} onClick={swapForm}/>
-				}
-				{
-					!inProp &&
-					<FormLoginContainer linkTo={handleTo} onClick={swapForm}/>
-				}
+				{/* <FormLoginContainer linkTo={handleTo} onClick={swapForm} /> /> */}
 			</S.FormBackground>
 			<Footer color="#6E0E0A" />
 		</S.Container>

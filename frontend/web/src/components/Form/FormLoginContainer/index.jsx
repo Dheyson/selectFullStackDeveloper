@@ -21,10 +21,12 @@ const FormLoginContainer = ({ linkTo, onClick }) => {
 		errors,
 		handleChange,
 		handleSubmit,
+		isEnabled
 	} = useForm(login, validate);
 
 	function login() {
 		console.log('No errors, submit callback called!');
+		console.log(values);
 	}
 
 	return (
@@ -53,7 +55,7 @@ const FormLoginContainer = ({ linkTo, onClick }) => {
 					handleChange={handleChange}
 				/>
 				{errors.password && (<S.errorField>{errors.password}</S.errorField>)}
-				<Button text="Submit" />
+				<Button text="Submit" disabled={isEnabled}/>
 				<SpanLink linkLabel="Register" text="Don't have an account? " to={linkTo} onClick={onClick} />
 			</Form>
 		</>

@@ -8,8 +8,13 @@ export const StyledButton = styled.button`
 	width: 100%;
 
 	&:hover {
-	background: #124c79;
+	background: #5e9ccc;
+	};
+
+	&:disabled {
+		opacity: 0.5;
 	}
+
 `;
 
 StyledButton.defaultProps = {

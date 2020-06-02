@@ -15,11 +15,20 @@ const FormContainer = ({ linkTo, onClick }) => {
 		errors,
 		handleChange,
 		handleSubmit,
+		isEnabled,
+		handleBlur
 	} = useForm(signUp, validate);
 
 	function signUp() {
 		console.log('No errors, submit callback called!');
 	}
+
+	const shouldMarkError = field => {
+		const hasError = errors[field];
+		const shouldShow = errors.touch[field];
+
+		return hasError ? shouldShow : false;
+	};
 
 	return (
 		<>
@@ -36,6 +45,7 @@ const FormContainer = ({ linkTo, onClick }) => {
 					inputText="Your name"
 					value={values.username || ''}
 					handleChange={handleChange}
+					onBlur={handleBlur}
 				/>
 				{errors.username && (<S.errorField>{errors.username}</S.errorField>)}
 				<InputGroup
@@ -69,7 +79,7 @@ const FormContainer = ({ linkTo, onClick }) => {
 				/>
 				{errors.repeat_password && (<S.errorField>{errors.repeat_password}</S.errorField>)}
 				<SpanLink linkLabel="Login" text="Already have an account? " to={linkTo} onClick={onClick} />
-				<Button text="Submit" />
+				<Button text="Submit" disabled={!isEnabled} />
 			</Form>
 		</>
 	);

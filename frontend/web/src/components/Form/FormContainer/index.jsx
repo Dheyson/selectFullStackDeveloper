@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import InputGroup from '../Input';
 import Button from '../../Button';
@@ -10,6 +10,7 @@ import useForm from '../../../utils/useForm';
 import './style.css';
 
 const FormContainer = ({ linkTo, onClick }) => {
+	const [loading, setLoading] = useState(false);
 	const {
 		values,
 		errors,
@@ -21,14 +22,15 @@ const FormContainer = ({ linkTo, onClick }) => {
 
 	function signUp() {
 		console.log('No errors, submit callback called!');
+		console.log(values, errors);
 	}
 
-	const shouldMarkError = field => {
-		const hasError = errors[field];
-		const shouldShow = errors.touch[field];
+	// const shouldMarkError = field => {
+	// 	const hasError = errors[field];
+	// 	const shouldShow = errors.touch[field];
 
-		return hasError ? shouldShow : false;
-	};
+	// 	return hasError ? shouldShow : false;
+	// };
 
 	return (
 		<>
@@ -45,7 +47,6 @@ const FormContainer = ({ linkTo, onClick }) => {
 					inputText="Your name"
 					value={values.username || ''}
 					handleChange={handleChange}
-					onBlur={handleBlur}
 				/>
 				{errors.username && (<S.errorField>{errors.username}</S.errorField>)}
 				<InputGroup
@@ -78,8 +79,12 @@ const FormContainer = ({ linkTo, onClick }) => {
 					handleChange={handleChange}
 				/>
 				{errors.repeat_password && (<S.errorField>{errors.repeat_password}</S.errorField>)}
-				<SpanLink linkLabel="Login" text="Already have an account? " to={linkTo} onClick={onClick} />
-				<Button text="Submit" disabled={!isEnabled} />
+				<SpanLink
+					linkLabel="Login"
+					text="Already have an account? "
+					to={linkTo}
+					onClick={onClick} />
+				<Button text="Submit" disabled={loading} />
 			</Form>
 		</>
 	);

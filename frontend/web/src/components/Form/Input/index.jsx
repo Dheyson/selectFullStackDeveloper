@@ -2,7 +2,16 @@ import React from 'react';
 
 import * as S from './styles';
 
-const InputGroup = ({ name, title, inputText, type, value, handleChange, className, style, onBlur }) => {
+const InputGroup = ({
+	name,
+	title,
+	inputText,
+	type,
+	value,
+	handleChange,
+	className,
+	style,
+	onBlur }) => {
 	return (
 		<S.Group >
 			<S.Label htmlFor={name}>

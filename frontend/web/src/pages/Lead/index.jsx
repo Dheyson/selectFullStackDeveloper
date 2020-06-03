@@ -4,13 +4,7 @@ import * as S from './styles';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import {
-	Link,
-} from "react-router-dom";
-
-import FormContainer from '../../components/Form/FormContainer';
-
-import SpanLink from '../../components/SpanLink';
+import SignUpFormContainer from '../../components/Form/FormContainer';
 
 const Lead = () => {
 	return (
@@ -28,7 +22,7 @@ const Lead = () => {
 
 			<Col xs={12} sm={12} md={5}>
 				<S.FormWrapper>
-					<FormContainer linkTo="/login"/>
+					<SignUpFormContainer linkTo="/login"/>
 				</S.FormWrapper>
 			</Col>
 		</Row>

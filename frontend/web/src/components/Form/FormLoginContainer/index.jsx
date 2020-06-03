@@ -9,19 +9,12 @@ import validate from '../ValidationRules';
 import useForm from '../../../utils/useForm';
 import './style.css';
 
-const styles = {
-	errorField: {
-		borderColor: 'red'
-	}
-}
-
 const FormLoginContainer = ({ linkTo, onClick }) => {
 	const {
 		values,
 		errors,
 		handleChange,
 		handleSubmit,
-		isEnabled
 	} = useForm(login, validate);
 
 	function login() {
@@ -55,8 +48,12 @@ const FormLoginContainer = ({ linkTo, onClick }) => {
 					handleChange={handleChange}
 				/>
 				{errors.password && (<S.errorField>{errors.password}</S.errorField>)}
-				<Button text="Submit" disabled={isEnabled}/>
-				<SpanLink linkLabel="Register" text="Don't have an account? " to={linkTo} onClick={onClick} />
+				<Button text="Submit" />
+				<SpanLink
+					linkLabel="Register"
+					text="Don't have an account? "
+					to={linkTo}
+					onClick={onClick} />
 			</Form>
 		</>
 	);

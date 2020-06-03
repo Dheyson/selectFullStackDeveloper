@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 function useForm(callback, validate) {
 	const [values, setValues] = useState({});
 	const [errors, setErrors] = useState({});
-	const [isSubmitting, setIsSubmitting] = useState(false);
 	const isEnabled = !Object.keys(errors).some(x => errors[x]);
 
 	const handleSubmit = (event) => {
 		if (event) event.preventDefault();
-		setIsSubmitting(true);
 		setErrors(validate(values));
+		console.log(values, errors);
+
 	}
 
 	const handleChange = (event) => {
@@ -17,15 +17,15 @@ function useForm(callback, validate) {
 		setValues(values => ({ ...values, [event.target.name]: event.target.value }));
 	};
 
-	const handleBlur = (field) => (evt) => {
-		evt.persist();
-		setValues({
-			touched: { ...errors.touch, [field]: true },
-		});
-	}
+	// const handleBlur = (field) => (evt) => {
+	// 	evt.persist();
+	// 	setValues({
+	// 		touched: { ...errors.touch, [field]: true },
+	// 	});
+	// }
 
 	useEffect(() => {
-		if(Object.keys(errors).length === 0 && isSubmitting) {
+		if(Object.keys(errors).length === 0) {
 			callback();
 		}
 	}, [errors]);
@@ -33,7 +33,6 @@ function useForm(callback, validate) {
 	return {
 		handleChange,
 		handleSubmit,
-		handleBlur,
 		values,
 		errors,
 		isEnabled

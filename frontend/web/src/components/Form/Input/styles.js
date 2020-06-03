@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Form from 'react-bootstrap/Form';
-
 export const Group = styled.div`
 	margin-bottom: 24px;
 `;

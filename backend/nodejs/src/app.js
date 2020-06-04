@@ -18,6 +18,7 @@ app.use(function (req, res, next) {
 	}
 });
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());

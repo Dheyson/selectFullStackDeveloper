@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import './style.css';
 
 const FormLoginContainer = ({ linkTo, onClick }) => {
-	const { register, handleSubmit, watch, errors } = useForm({ mode: 'onChange', });
+	const { register, handleSubmit, errors } = useForm({ mode: 'onChange', });
 	const onSubmit = data => console.log(data);
 
 	return (

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button'
 
 export const StyledButton = styled.button`
 	background: ${props => props.theme.main};

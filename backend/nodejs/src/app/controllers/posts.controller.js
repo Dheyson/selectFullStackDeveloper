@@ -2,7 +2,6 @@ const { posts } = require('../../database/models');
 
 module.exports.createPost = async (req, res) => {
 	const { post_title, post_content, publish_date, userId } = req.body;
-	// pega o ID do user da sesseon - User logado
 
 	try {
 		let response = await posts.create({

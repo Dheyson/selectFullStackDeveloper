@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Info = styled.span`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;

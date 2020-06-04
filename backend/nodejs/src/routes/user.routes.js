@@ -11,10 +11,10 @@ router.get('/users/:id', usersController.getUser);
 
 router.post('/users', usersController.createUser);
 
-router.put('/users/:id', usersController.update);
-
 router.post('/sessions', sessionController.default);
 
-router.put('/users', authMiddleware.default, usersController.createUser);
+router.use(authMiddleware);
+
+router.put('/users/:id', usersController.update);
 
 module.exports = router;

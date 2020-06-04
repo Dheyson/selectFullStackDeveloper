@@ -5,7 +5,6 @@ export const Group = styled.div`
 `;
 
 export const Label = styled.label`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SpanStyled = styled.p`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 12px;

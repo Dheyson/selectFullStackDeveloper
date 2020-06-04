@@ -4,6 +4,7 @@ import imgDesktop from '../../assets/images/bg-intro-desktop.png';
 import imgMobile from '../../assets/images/bg-intro-mobile.png';
 
 export const ColBackground = styled(Col)`
+	display: flex;
 	background-image: url(${imgMobile});
 	position: relative;
 	@media (min-width: 1440px) {
@@ -22,26 +23,29 @@ export const ColBackground = styled(Col)`
 `;
 
 export const InfoWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	padding: 40px;
+	margin: auto;
 `;
 
 export const Header = styled.h1`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 36px;
 	line-height: 54px;
 	color: #333333;
 
-	@media (min-width: 1440px) {
+	@media (min-width: 900px) {
     font-weight: 600;
 		font-size: 72px;
 		line-height: 108px;
+		margin: 0 auto;
   }
 `;
 
 export const Subtitle = styled.p`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 12px;
@@ -51,6 +55,7 @@ export const Subtitle = styled.p`
 @media (min-width: 1440px) {
     font-size: 16px;
 		line-height: 24px;
+		width: 400px;
   }
 `;
 
@@ -65,7 +70,6 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormHeader = styled.h2`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 18px;

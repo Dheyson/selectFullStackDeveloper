@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FormHeader = styled.h2`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 24px;
@@ -16,7 +15,6 @@ export const FormHeader = styled.h2`
 `;
 
 export const errorField = styled.p`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;

@@ -9,7 +9,6 @@ export const PostItem = styled.div`
 `;
 
 export const DataSpan = styled.span`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 12px;
@@ -19,7 +18,6 @@ export const DataSpan = styled.span`
 `;
 
 export const TitleHeader = styled.h1`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 16px;
@@ -29,7 +27,6 @@ export const TitleHeader = styled.h1`
 `;
 
 export const UserNameSpan = styled.span`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 12px;
@@ -39,7 +36,6 @@ export const UserNameSpan = styled.span`
 `;
 
 export const ContentParagraph = styled.p`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;

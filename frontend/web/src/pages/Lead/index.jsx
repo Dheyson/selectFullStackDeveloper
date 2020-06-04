@@ -6,9 +6,20 @@ import Col from 'react-bootstrap/Col';
 
 import SignUpFormContainer from '../../components/Form/FormContainer';
 
+const styles = {
+	LeadContainer : {
+		height: '100vh'
+	},
+	FormWrapStyles: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+}
+
 const Lead = () => {
 	return (
-		<Row>
+		<Row style={styles.LeadContainer}>
 			<S.ColBackground xs={12} sm={12} md={7}>
 				<S.InfoWrapper>
 					<S.Header>
@@ -20,7 +31,7 @@ const Lead = () => {
 				</S.InfoWrapper>
 			</S.ColBackground>
 
-			<Col xs={12} sm={12} md={5}>
+			<Col xs={12} sm={12} md={5} style={styles.FormWrapStyles}>
 				<S.FormWrapper>
 					<SignUpFormContainer linkTo="/login"/>
 				</S.FormWrapper>

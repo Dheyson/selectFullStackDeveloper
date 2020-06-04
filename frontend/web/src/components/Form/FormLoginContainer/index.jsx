@@ -43,7 +43,7 @@ const FormLoginContainer = ({ linkTo, onClick }) => {
 					inputText="Your password"
 					defaultValue=''
 					ref={register({
-						required: 'This field is required', minLength: {
+						required: 'Password is required', minLength: {
 							value: 8,
 							message: 'It must be minLenght of 8'
 						},

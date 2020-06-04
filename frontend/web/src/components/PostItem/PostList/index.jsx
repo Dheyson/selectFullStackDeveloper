@@ -17,6 +17,15 @@ const PostList = () => {
 			<S.UserNameSpan>
 				Ragnar Lothbrok
 					</S.UserNameSpan>
+			<S.DataSpan>
+				March 23, 2020
+					</S.DataSpan>
+			<S.TitleHeader>
+				Client-side Vs. Server-side Rendering: What to choose when?
+					</S.TitleHeader>
+			<S.UserNameSpan>
+				Ragnar Lothbrok
+					</S.UserNameSpan>
 		</S.Container>
 	);
 }

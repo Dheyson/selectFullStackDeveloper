@@ -20,10 +20,10 @@ export const ImageLogotype = styled.img`
 
 export const UserSpan = styled.span`
 	color: #124E78;
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 24px;
 	text-transform: uppercase;
+	padding-left: 20px;
 `;

@@ -13,6 +13,9 @@ const Home = () => {
 			<Header />
 			<S.Main>
 				<S.ItemsContainer>
+					<S.Title>
+						Posts
+					</S.Title>
 					<PostItem />
 					<PostItem />
 				</S.ItemsContainer>

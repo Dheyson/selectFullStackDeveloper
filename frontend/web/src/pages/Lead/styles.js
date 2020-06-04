@@ -37,7 +37,7 @@ export const Header = styled.h1`
 	line-height: 54px;
 	color: #333333;
 
-	@media (min-width: 900px) {
+	@media (min-width: 800px) {
     font-weight: 600;
 		font-size: 72px;
 		line-height: 108px;
@@ -52,7 +52,7 @@ export const Subtitle = styled.p`
 	line-height: 20px;
 	color: #333333;
 
-@media (min-width: 1440px) {
+@media (min-width: 800px) {
     font-size: 16px;
 		line-height: 24px;
 		width: 400px;
@@ -62,7 +62,7 @@ export const Subtitle = styled.p`
 export const FormWrapper = styled.div`
 	padding: 40px 16px 40px 16px;
 
-	@media (min-width: 1440px) {
+	@media (min-width: 800px) {
     display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -77,7 +77,7 @@ export const FormHeader = styled.h2`
 	color: #333333;
 	margin-bottom: 24px;
 
-	@media (min-width: 1440px) {
+	@media (min-width: 800px) {
 		font-size: 36px;
 		line-height: 54px;
   }

@@ -35,7 +35,7 @@ export const TitleHeader = styled.h1`
 	color: #D74E09;
 `;
 
-export const UserNameSpan = styled.span`
+export const UserNameSpan = styled.p`
 	font-style: normal;
 	font-weight: normal;
 	font-size: 12px;

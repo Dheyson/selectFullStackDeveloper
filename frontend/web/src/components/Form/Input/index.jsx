@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 
 import * as S from './styles';
 
-const InputGroup = ({
+const InputGroup = forwardRef(({
 	name,
 	title,
 	inputText,
@@ -11,7 +11,9 @@ const InputGroup = ({
 	handleChange,
 	className,
 	style,
-	onBlur }) => {
+	onBlur,
+	defaultValue
+}, ref) => {
 	return (
 		<S.Group >
 			<S.Label htmlFor={name}>
@@ -26,9 +28,12 @@ const InputGroup = ({
 				type={type}
 				value={value}
 				placeholder={inputText}
-				onChange={handleChange} />
+				onChange={handleChange}
+				ref={ref}
+				defaultValue={defaultValue}
+				/>
 		</S.Group>
 	);
-}
+})
 
 export default InputGroup;

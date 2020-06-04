@@ -1,20 +1,28 @@
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button'
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled.button`
 	background: ${props => props.theme.main};
 	border-radius: 6px;
 	border: 0px solid ${props => props.theme.main};
+	width: 100%;
+
+	&:hover {
+	background: #5e9ccc;
+	};
+
+	&:disabled {
+		opacity: 0.5;
+	}
+
 `;
 
 StyledButton.defaultProps = {
 	theme: {
-		main: '#124E78'
+		main: '#124E78',
 	}
 }
 
 export const StyledSpan = styled.span`
-	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 24px;

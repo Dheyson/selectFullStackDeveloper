@@ -1,45 +1,42 @@
 import React from 'react';
 
 import * as S from './styles';
-import Button from '../../components/Button';
-import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import SignUpFormContainer from '../../components/Form/FormContainer';
+
+const styles = {
+	LeadContainer : {
+		height: '100vh'
+	},
+	FormWrapStyles: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+}
 
 const Lead = () => {
 	return (
-		<div>
-			<S.LeadWrapper>
-				<S.Header>
-					CMS <br />Softmakers
+		<Row style={styles.LeadContainer}>
+			<S.ColBackground xs={12} sm={12} md={7}>
+				<S.InfoWrapper>
+					<S.Header>
+						CMS <br />Softmakers
 					</S.Header>
-				<S.Subtitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cupiditate possimus perferendis? Libero id harum molestiae dolorem voluptatem reiciendis, at magni voluptatum debitis hic corporis maxime! Laudantium ut repudiandae distinctio!
+					<S.Subtitle>
+						A content management system (CMS) is a software application that can be used to manage the creation and modification of digital content. CMSs are typically used for enterprise content management (ECM) and web content management (WCM).
 					</S.Subtitle>
-			</S.LeadWrapper>
-			<S.FormWrapper>
-				<S.FormHeader>
-					Create
-					an account:
-					</S.FormHeader>
-				<Form>
-					<Form.Group controlId="formGroupEmail">
-						<Form.Label>Name</Form.Label>
-						<Form.Control type="text" placeholder="Enter name" />
-					</Form.Group>
-					<Form.Group controlId="formGroupPassword">
-						<Form.Label>Email</Form.Label>
-						<Form.Control type="email" placeholder="Enter email" />
-					</Form.Group>
-					<Form.Group controlId="formGroupPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="Password" />
-					</Form.Group>
-					<Form.Group controlId="formGroupPassword">
-						<Form.Label>Repeat Password</Form.Label>
-						<Form.Control type="password" placeholder="Repeat Password" />
-					</Form.Group>
-					<Button text="Submit" />
-				</Form>
-			</S.FormWrapper>
-		</div>
+				</S.InfoWrapper>
+			</S.ColBackground>
+
+			<Col xs={12} sm={12} md={5} style={styles.FormWrapStyles}>
+				<S.FormWrapper>
+					<SignUpFormContainer linkTo="/login"/>
+				</S.FormWrapper>
+			</Col>
+		</Row>
 	)
 }
 

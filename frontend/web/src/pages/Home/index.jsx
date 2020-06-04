@@ -1,10 +1,30 @@
 import React from 'react';
 
+import * as S from './styles';
+
+import Header from '../../components/Layout/Header';
+import Footer from '../../components/Footer';
+import PostItem from '../../components/PostItem';
+import PostList from '../../components/PostItem/PostList';
+
 const Home = () => {
 	return (
-		<div>
-			<h1>This is a test</h1>
-		</div>
+		<S.Container>
+			<Header />
+			<S.Main>
+				<S.ItemsContainer>
+					<S.Title>
+						Posts
+					</S.Title>
+					<PostItem />
+					<PostItem />
+				</S.ItemsContainer>
+				<S.PostListContainer>
+					<PostList />
+				</S.PostListContainer>
+			</S.Main>
+			<Footer />
+		</S.Container>
 	);
 }
 

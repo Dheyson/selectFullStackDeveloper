@@ -1,7 +1,7 @@
 const express = require('express');
-const usersController = require('../controller/users.controller');
-const sessionController = require('../controller/session.controller');
-const authMiddleware = require('../app/middleware/auth');
+const usersController = require('../app/controllers/users.controller');
+const sessionController = require('../app/controllers/session.controller');
+const authMiddleware = require('../app/middlewares/auth.middleware');
 
 const router = express.Router();
 
@@ -11,10 +11,8 @@ router.get('/users/:id', usersController.getUser);
 
 router.post('/users', usersController.createUser);
 
-router.put('/users/:id', usersController.update);
-
 router.post('/sessions', sessionController.default);
 
-// router.put('/users', authMiddleware, usersController.createUser);
+router.put('/users/:id', usersController.update);
 
 module.exports = router;

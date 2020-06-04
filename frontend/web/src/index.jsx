@@ -2,18 +2,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './router/router';
 import Layout from './components/Layout';
+import GlobalStyles from './index';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Layout>
-				<Routes />
-			</Layout>
+			<GlobalStyles/>
+			<Routes />
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root'),

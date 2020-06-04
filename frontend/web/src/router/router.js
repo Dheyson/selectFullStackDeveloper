@@ -1,22 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Switch, Route } from "react-router-dom";
 import LeadPage from "../pages/Lead";
 import HomePage from "../pages/Home";
 import FrontPage from '../pages/Front';
 
 export default function App() {
+
 	return (
+		<>
 			<Switch>
-				<Route path="/">
+				<Route exact path="/">
 					<LeadPage />
 				</Route>
-				<Route path="/front">
+				<Route path="/login">
 					<FrontPage />
 				</Route>
-				<Route path="/a">
+				<Route path="/home">
 					<HomePage />
 				</Route>
 			</Switch>
+		</>
 	);
 }

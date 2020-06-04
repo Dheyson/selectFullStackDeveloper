@@ -13,8 +13,6 @@ router.post('/users', usersController.createUser);
 
 router.post('/sessions', sessionController.default);
 
-router.use(authMiddleware);
-
 router.put('/users/:id', usersController.update);
 
 module.exports = router;

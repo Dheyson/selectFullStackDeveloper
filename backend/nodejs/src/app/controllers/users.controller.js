@@ -3,7 +3,9 @@ const { users } =  require('../../database/models');
 
 module.exports.createUser = async (req, res) => {
 	const schema = Yup.object().shape({
-		username: Yup.string().required(),
+		username: Yup.string()
+		.required()
+		.min(4),
 		email: Yup.string()
 			.email()
 			.required(),

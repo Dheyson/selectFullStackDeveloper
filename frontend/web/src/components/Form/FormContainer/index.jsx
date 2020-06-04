@@ -5,12 +5,27 @@ import Button from '../../Button';
 import Form from 'react-bootstrap/Form';
 import * as S from './styles'
 import SpanLink from '../../SpanLink';
+import axios from 'axios';
 
 import './style.css';
 
+const instance = axios.create({
+	baseURL: 'http://localhost:3003/api',
+	headers: {
+		'Content-Type': 'application/json'
+	}
+});
+
 const FormContainer = ({ linkTo, onClick }) => {
 	const { register, handleSubmit, watch, errors } = useForm({ mode: 'onChange', });
-	const onSubmit = data => console.log(data);
+
+	const onSubmit = async (data) => {
+		console.log(data);
+
+		await instance.post('/users', data)
+		.then(res => console.log(res.data))
+		.catch(err => console.log('Something wrong ', err))
+	};
 
 	return (
 		<>
@@ -58,8 +73,8 @@ const FormContainer = ({ linkTo, onClick }) => {
 					inputText="Your password"
 					defaultValue=''
 					ref={register({ required: 'Password field is required', minLength: {
-						value: 8,
-						message: 'It must be minLenght of 8'
+						value: 6,
+						message: 'It must be minLenght of 6'
 					}, })}
 				/>
 				{(<S.errorField>{errors.password && errors.password.message}</S.errorField>)}
@@ -74,8 +89,8 @@ const FormContainer = ({ linkTo, onClick }) => {
 						{
 							required: 'This field is required',
 							minLength: {
-								value: 8,
-								message: 'It must be minLenght of 8'
+								value: 6,
+								message: 'It must be minLenght of 6'
 							},
 							validate: (value) => {
 								return value === watch('password') || "The passwords does not match"

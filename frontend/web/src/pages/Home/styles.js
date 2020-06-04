@@ -18,7 +18,6 @@ export const Title = styled.h1`
 	letter-spacing: 0.05em;
 	color: #D74E09;
 	text-align: start;
-	width: 85%;
 `;
 
 export const Main = styled.main`
